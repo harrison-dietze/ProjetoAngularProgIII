@@ -1,0 +1,3 @@
+<mat-accordion>
+    <app-post *ngFor="let post of posts$ | async" [post]="post"></app-post>
+</mat-accordion>

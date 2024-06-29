@@ -8,14 +8,6 @@
   <mat-card-content>
     <p>{{ post?.body }}</p>
   </mat-card-content>
-  <mat-card-footer class="example-card-footer">
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <span>Comments</span>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <app-comments></app-comments>
-    </mat-expansion-panel>
-  </mat-card-footer>
-</mat-card>
+
+      <app-comments [postId]="post?.id"></app-comments>
+    </mat-card>

@@ -1,0 +1,30 @@
+
+.flex-wrap {
+    place-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.picture {
+    text-align: center;
+    font-size: 5em;
+    width: calc(100dvw/3.2);
+    height: auto;
+   
+}
+
+.album {
+    display: flex;
+    place-items: center;
+    width: calc(100dvw/3.2);
+    height: auto;
+}
+
+
+.title {
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    max-width: calc(100dvw/3.4);
+    overflow: hidden;
+    text-align: center;
+}

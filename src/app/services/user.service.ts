@@ -18,5 +18,11 @@ export class UserService {
    public getAllUsers(): Observable<User[]> {
     return this.httpClient?.get<User[]>(BaseUrl.jsonPlaceholder + '/Users') 
    }
+
+   public getUserById(userId?: number): Observable<User> {
+    return this.httpClient?.get<User>(
+      BaseUrl.jsonPlaceholder + 'users/' + userId
+    );
+  }
    
   }

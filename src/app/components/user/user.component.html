@@ -1,0 +1,25 @@
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>{{ "@" + (user$ | async)?.username }}</mat-card-title>
+      <mat-card-subtitle>
+        <a class="email">{{ (user$ | async)?.email }}</a>
+        <div class="centralized">
+          <mat-icon>phone</mat-icon>
+          <span>{{ (user$ | async)?.phone }}</span>
+        </div>
+      </mat-card-subtitle>
+
+      <mat-icon class="user-profile-picture">person</mat-icon>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content> 
+
+    <mat-tab-group animationDuration="500ms">
+        <mat-tab label="Posts"><app-timeline [posts$]="posts$"></app-timeline></mat-tab>
+        <mat-tab label="Albums"><app-albums [albums$]="albums$"></app-albums></mat-tab>
+        <mat-tab label="To-dos"><app-to-dos [toDos$]="toDos$"></app-to-dos>></mat-tab>
+      </mat-tab-group>
+
+  </mat-card-content>
+</mat-card>

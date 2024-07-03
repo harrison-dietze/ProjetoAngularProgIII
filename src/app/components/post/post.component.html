@@ -1,13 +1,20 @@
 <mat-card appearance="outlined">
   <mat-card-header>
-    <mat-card-title
-      ><span class="truncate">{{ post?.title }}</span></mat-card-title
-    >
+    <mat-card-title>
+      
+        <div (click)="detailUser()" class="centralized user">
+          <mat-icon>person</mat-icon>
+          <span>{{ "@" + post?.user?.username }}</span>
+         
+        </div>
+        <mat-divider></mat-divider>
+      
+      <p class="title">{{ post?.title }}</p>
+    </mat-card-title>
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
     <p>{{ post?.body }}</p>
   </mat-card-content>
-
-      <app-comments [postId]="post?.id"></app-comments>
-    </mat-card>
+  <app-comments [post]="post"></app-comments>
+</mat-card>

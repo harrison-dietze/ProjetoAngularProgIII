@@ -6,27 +6,28 @@ import { Comment } from '../../model/comment.interface';
 import { Observable } from 'rxjs';
 import { CommentService } from '../../services/comment.service';
 import { CommonModule } from '@angular/common';
+import { Post } from '../../model/post.interface';
 
 @Component({
   selector: 'app-comments',
   standalone: true,
-  imports: [MatExpansionModule, MatCardModule, MatDividerModule, CommentsComponent, CommonModule],
+  imports: [
+    MatExpansionModule,
+    MatCardModule,
+    MatDividerModule,
+    CommonModule,
+  ],
   templateUrl: './comments.component.html',
-  styleUrl: './comments.component.scss'
+  styleUrl: './comments.component.scss',
 })
 export class CommentsComponent {
-  constructor(
+  constructor(private commentsService: CommentService) {}
 
-    private commentsService: CommentService
-  ) {}
+  public comments$: Observable<Comment[]> = new Observable();
 
-  public comments: Comment[] = []
-
-  @Input() postId?: number
+  @Input() post?: Post;
 
   public buscarComentarios(): void {
-     this.commentsService.getCommentByPost(this.postId).subscribe(res => {
-      this.comments = res
-     })
+    this.comments$ = this.commentsService.getCommentByPost(this.post?.id);
   }
 }

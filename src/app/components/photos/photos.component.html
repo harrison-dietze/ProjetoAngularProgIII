@@ -1,0 +1,8 @@
+<div class="flex-wrap">
+  <div class="photo" *ngFor="let photo of photos$ | async">
+    <div>
+      <img src="{{photo.thumbnailUrl}}" class="picture"/>
+      <p class="title">{{ photo.title }}</p>
+    </div>
+  </div>
+</div>

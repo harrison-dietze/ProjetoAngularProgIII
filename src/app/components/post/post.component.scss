@@ -1,6 +1,35 @@
-// .truncate {
-//     width: 80dvw;
-//     white-space: nowrap;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//   }
+.mat-mdc-card-header {
+  display: flex;
+  padding: 8px 8px 8px;
+}
+
+p {
+  text-align: justify;
+}
+
+.mat-mdc-card-content {
+  display: block;
+  padding: 0 8px;
+}
+
+.centralized {
+  display: flex;
+  place-items: center;
+}
+
+.user {
+  padding-bottom: 4px;
+    cursor: pointer;
+}
+
+mat-divider{
+  padding-top: 8px;
+
+}
+
+.title {
+  margin-bottom: 0;
+  text-align: left;
+  padding-right: 2em;
+}
+

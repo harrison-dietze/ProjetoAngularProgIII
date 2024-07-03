@@ -1,0 +1,8 @@
+<div class="flex-wrap">
+  <div class="album" *ngFor="let album of albums$ | async">
+    <div (click)="openPhotos(album)">
+      <mat-icon class="picture">photo_library</mat-icon>
+      <p class="title">{{ album.title }}</p>
+    </div>
+  </div>
+</div>

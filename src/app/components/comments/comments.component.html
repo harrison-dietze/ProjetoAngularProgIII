@@ -1,14 +1,19 @@
 <mat-card-footer class="example-card-footer">
-    <mat-expansion-panel (opened)="buscarComentarios()">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <span>Comments</span>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <ul *ngFor="let comment of comments">
-        <li>{{comment.email}}</li>
-        <li>{{comment.body}}</li>
-      </ul>
-    </mat-expansion-panel>
+  <mat-expansion-panel (opened)="buscarComentarios()">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span>Comments</span>
+        <mat-divider></mat-divider>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div *ngFor="let comment of comments$ | async">
+      <div class="body">
+        <a class="email">{{ comment.email }}</a>
+        <br />
+        <span>{{ comment.body }}</span>
+        <mat-divider></mat-divider>
+      </div>
+      
+    </div>
+  </mat-expansion-panel>
 </mat-card-footer>
-

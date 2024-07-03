@@ -1,0 +1,11 @@
+
+    <div *ngFor="let toDo of toDos$ | async">
+      <div class="body">
+        <mat-checkbox [checked]="toDo.completed">{{toDo.title}}</mat-checkbox>
+        <br />
+       
+        <mat-divider></mat-divider>
+      </div>
+      
+    </div>
+ 

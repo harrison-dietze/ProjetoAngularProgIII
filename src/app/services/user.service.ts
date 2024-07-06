@@ -16,12 +16,22 @@ export class UserService {
   }
 
    public getAllUsers(): Observable<User[]> {
-    return this.httpClient?.get<User[]>(BaseUrl.jsonPlaceholder + '/Users') 
+    return this.httpClient?.get<User[]>(BaseUrl.jsonPlaceholder + '/users') 
+   }
+
+   public createUser(user: User): Observable<Object> {
+    return this.httpClient?.post(BaseUrl.jsonPlaceholder + '/user', user) 
    }
 
    public getUserById(userId?: number): Observable<User> {
     return this.httpClient?.get<User>(
-      BaseUrl.jsonPlaceholder + 'users/' + userId
+      BaseUrl.jsonPlaceholder + 'user/' + userId
+    );
+  }
+
+  public deleteUserById(userId?: number): Observable<Object> {
+    return this.httpClient?.delete(
+      BaseUrl.jsonPlaceholder + '/user/' + userId
     );
   }
    

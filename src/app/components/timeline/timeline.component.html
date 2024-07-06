@@ -1,3 +1,15 @@
+<div *ngIf="!(user$ | async)" class="add-buttons">
+    <button (click)="addUser()" mat-fab extended>
+      <mat-icon>person_add</mat-icon>
+      User
+    </button>
+    <button (click)="addPost()" mat-fab extended>
+      <mat-icon>post_add</mat-icon>
+      Post
+    </button>
+  </div>
 <mat-accordion class="flex-column-gap">
-    <app-post *ngFor="let post of posts$ | async" [post]="post"></app-post>
+  <app-post *ngFor="let post of posts$ | async" [post]="post"></app-post>
 </mat-accordion>
+
+

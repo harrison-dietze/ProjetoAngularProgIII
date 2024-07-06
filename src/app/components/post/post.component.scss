@@ -33,3 +33,14 @@ mat-divider{
   padding-right: 2em;
 }
 
+.actions-div{
+  display: flex;
+  justify-content: space-between;
+  width: 100dvw;
+  flex-direction: row;
+}
+
+.user-div {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,27 @@
+<form [formGroup]="form" class="form">
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input formControlName="title" matInput />
+  </mat-form-field>
+
+  
+  <mat-form-field>
+    <mat-label>Body</mat-label>
+    <input formControlName="body" matInput  />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>User</mat-label>
+    <mat-select formControlName="userId">
+      @for (user of users$ | async; track user) {
+        <mat-option [value]="user.id">{{ user.name }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <button
+  (click)="createPost()"
+  mat-raised-button
+  [disabled]="form.invalid"
+  matTooltip="Fill the fields!">Create post</button>
+</form>

@@ -23,4 +23,14 @@ export class PostService {
       BaseUrl.jsonPlaceholder + 'user/' + userId + '/posts/'
     );
   }
+
+  public createPost(post: Post): Observable<Object> {
+    return this.httpClient?.post(BaseUrl.jsonPlaceholder + '/post', post) 
+   }
+
+   public deletePostById(postId?: number): Observable<Object> {
+    return this.httpClient?.delete(
+      BaseUrl.jsonPlaceholder + '/post/' + postId
+    );
+  }
 }

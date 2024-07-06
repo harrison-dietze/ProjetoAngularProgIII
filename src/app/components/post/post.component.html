@@ -1,14 +1,27 @@
 <mat-card appearance="outlined">
   <mat-card-header>
     <mat-card-title>
-      
-        <div (click)="detailUser()" class="centralized user">
-          <mat-icon>person</mat-icon>
-          <span>{{ "@" + post?.user?.username }}</span>
-         
-        </div>
-        <mat-divider></mat-divider>
-      
+      <div class="actions-div">
+        <div class="user-div">
+          <div (click)="detailUser()" class="centralized user">
+            <mat-icon>person</mat-icon>
+            <span>{{ "@" + post?.user?.username }}</span>
+          </div>
+
+        <button (click)="deleteUser()" mat-button>
+          <mat-icon>delete</mat-icon>
+          User
+        </button>
+      </div>
+
+        <button (click)="deletePost()" mat-button>
+          <mat-icon>delete</mat-icon>
+          Post
+        </button>
+      </div>
+
+      <mat-divider></mat-divider>
+
       <p class="title">{{ post?.title }}</p>
     </mat-card-title>
   </mat-card-header>
@@ -16,5 +29,5 @@
   <mat-card-content>
     <p>{{ post?.body }}</p>
   </mat-card-content>
-  <app-comments [post]="post"></app-comments>
+  <!-- <app-comments [post]="post"></app-comments> -->
 </mat-card>

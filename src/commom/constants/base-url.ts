@@ -1,3 +1,4 @@
 export  class BaseUrl {
-    public static jsonPlaceholder: string = 'https://jsonplaceholder.typicode.com/'
-}
+    public static jsonPlaceholder: string = 'http://localhost:3000'
+    // public static jsonPlaceholder: string = 'https://jsonplaceholder.typicode.com/'
+    }
